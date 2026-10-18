@@ -1,0 +1,42 @@
+{
+  "name": "genpark-personal-agent-dynamic-wardrobe-capsule-packer-skill",
+  "version": "1.0.0",
+  "description": "Personal Agent Weather & Itinerary-Adaptive Capsule Wardrobe Packer. Synthesizes 7-day meteorological forecasts, destination dress codes (tech conference, gala, outdoor leisure), and airline carry-on limits to curate an interchangeable minimalist packing list.",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.llinkedin.com/company/92955550",
+  "tools": [
+    {
+      "name": "curate_capsule_packing_list",
+      "description": "Synthesize a weather-adaptive minimalist capsule wardrobe for multi-day travel.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "trip_destination": {
+            "type": "string",
+            "description": "City or destination name."
+          },
+          "trip_duration_days": {
+            "type": "integer",
+            "description": "Length of trip."
+          },
+          "weather_forecast": {
+            "type": "object",
+            "description": "Temp_min_c, temp_max_c, rain_probability_pct."
+          },
+          "activities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key activities (e.g. keynotes, fine dining, running, casual sightseeing)."
+          }
+        },
+        "required": [
+          "trip_destination",
+          "trip_duration_days",
+          "weather_forecast"
+        ]
+      }
+    }
+  ]
+}
